@@ -1,0 +1,15 @@
+pipeline {
+	agent {
+		label {
+		label 'built in'
+		customWorkspace "/mnt/Git1"
+		}
+	}
+	stages {
+		stage ('copy data') {
+			steps {
+				sh "cp /mnt/Git1/Jenkinfile/index.html /var/www/html/"
+			}
+		}
+	}
+}
